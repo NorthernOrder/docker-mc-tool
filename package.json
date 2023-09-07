@@ -1,0 +1,24 @@
+{
+  "name": "docker-mc-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IDK",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Ozoku",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.17.14",
+    "tsx": "^3.12.8",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cron": "^2.4.3",
+    "execa": "^8.0.1",
+    "zod": "^3.22.2"
+  }
+}
