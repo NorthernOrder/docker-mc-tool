@@ -87,11 +87,13 @@ const configSchema = z.object({
       webHooks: z.literal(true),
     }),
     universal: backupSchema,
+    _nyi: z.string(),
     individual: z.array(backupSchema),
   }),
   restart: z.object({
     servers: serverSelectorSchema,
     universal: restartSchema,
+    _nyi: z.string(),
     individual: z.array(restartSchema),
   }),
 });
@@ -121,6 +123,7 @@ const defaultConfig: Config = {
       keepWeekly: 1,
       keepMonthly: 1,
     },
+    _nyi: "--- NOT YET IMPLEMENTED ---",
     individual: [],
   },
   restart: {
@@ -130,6 +133,7 @@ const defaultConfig: Config = {
       announce: [300, 60, 30, 5, 4, 3, 2, 1],
       schedule: "0 0 12 * * *",
     },
+    _nyi: "--- NOT YET IMPLEMENTED ---",
     individual: [],
   },
 };
