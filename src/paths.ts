@@ -7,7 +7,7 @@ export const backupsFolder = "/backups";
 const dockerSocket = "/var/run/docker.sock";
 export const configFile = path.join(dataFolder, "config.json");
 
-export const validate = () => {
+export function validate() {
   const validate = [
     exists(dataFolder),
     isDirectory(dataFolder),
@@ -20,4 +20,4 @@ export const validate = () => {
   if (validate.filter((v) => !v).length > 0) {
     process.exit(1);
   }
-};
+}

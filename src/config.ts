@@ -1,7 +1,7 @@
 import * as z from "zod";
 import * as fs from "node:fs";
 
-const parseRange = (range: string, schema: z.ZodNumber): boolean => {
+function parseRange(range: string, schema: z.ZodNumber): boolean {
   return (
     range
       .split(",")
@@ -9,7 +9,7 @@ const parseRange = (range: string, schema: z.ZodNumber): boolean => {
       .map((v) => schema.safeParse(v).success)
       .filter(Boolean).length === 0
   );
-};
+}
 
 const patternRanges = [
   [0, 59],
@@ -20,7 +20,7 @@ const patternRanges = [
   [0, 6],
 ] as [number, number][];
 
-const parsePattern = (pattern: string, index: number): boolean => {
+function parsePattern(pattern: string, index: number): boolean {
   // Asterisk
   if (pattern === "*") return true;
 
@@ -38,15 +38,15 @@ const parsePattern = (pattern: string, index: number): boolean => {
   }
 
   return false;
-};
+}
 
-const parseCron = (val: string): boolean => {
+function parseCron(val: string): boolean {
   const patterns = val.split(" ");
 
   if (patterns.length !== 6) return false;
 
   return patterns.map(parsePattern).filter(Boolean).length === 0;
-};
+}
 
 const cronSchema = z
   .string()
