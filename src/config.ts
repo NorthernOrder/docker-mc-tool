@@ -98,7 +98,7 @@ const configSchema = z.object({
   }),
 });
 
-type Config = z.infer<typeof configSchema>;
+export type Config = z.infer<typeof configSchema>;
 
 const defaultConfig: Config = {
   backup: {

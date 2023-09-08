@@ -6,6 +6,7 @@ export const dataFolder = "/data";
 export const backupsFolder = "/backups";
 const dockerSocket = "/var/run/docker.sock";
 export const configFile = path.join(dataFolder, "config.json");
+export const dbFile = path.join(dataFolder, "db.json");
 
 export function validate() {
   const validate = [
